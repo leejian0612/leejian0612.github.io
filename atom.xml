@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>leejian0612</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2016-03-31T09:22:03.502Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>John Doe</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Tempest</title>
+    <link href="http://yoursite.com/2016/03/31/Tempest/"/>
+    <id>http://yoursite.com/2016/03/31/Tempest/</id>
+    <published>2016-03-31T09:22:03.542Z</published>
+    <updated>2016-03-31T09:22:03.502Z</updated>
+    
+    <content type="html">&lt;p&gt;Tempest for OpenStack Integration Tests&lt;/p&gt;
+&lt;p&gt;###Install and configure tempest:&lt;br&gt;&lt;code&gt;git clone https://github.com/openstack/tempest&lt;/code&gt;&lt;br&gt;&lt;code&gt;cd ~/tempest &amp;amp;&amp;amp; python setup.py install&lt;/code&gt;&lt;br&gt;&lt;code&gt;cp ./etc/tempest.conf.sample /etc/tempest.conf&lt;/code&gt;    &lt;/p&gt;
+&lt;p&gt;###modify the config file&lt;br&gt;&lt;code&gt;vim  /etc/tempest.conf&lt;/code&gt;    &lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;[DEFAULT]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;use_stderr = False&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;log_file = /home/leejian/work/tempest.log&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;lock_path = /tmp&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;default_log_levels = tempest.stress=INFO,amqplib=WARN,sqlalchemy=WARN,boto=WARN,suds=INFO,keystone=INFO,eventlet.wsgi.server=WARN&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[compute-admin]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;username = admin&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;password = lee0612&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;tenant_name = admin&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[identity]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;username = tempest1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;password = passw0rd&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;tenant_name = tempest1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;alt_username = tempest2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;alt_password = passw0rd&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;alt_tenant_name = tempest2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;admin_username = admin&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;admin_password = lee0612&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;admin_tenant_name = admin&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;region = RegionOne&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;uri = http://localhost:5000/v2.0/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;uri_v3 = http://127.0.0.1:5000/v3/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[network-feature-enabled]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;api_extensions = ,service-type,ext-gw-mode,security-group,l3_agent_scheduler,fwaas,binding,metering,agent,quotas,dhcp_agent_scheduler,l3-ha,multi-provider,external-net,router,allowed-address-pairs,extraroute,extra_dhcp_opt,provider,dvr&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[service_available]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;neutron = true&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;create-tenant-and-users-for-tests&quot;&gt;&lt;a href=&quot;#create-tenant-and-users-for-tests&quot; class=&quot;headerlink&quot; title=&quot;create tenant and  users for tests&quot;&gt;&lt;/a&gt;create tenant and  users for tests&lt;/h3&gt;&lt;p&gt;&lt;code&gt;keystone tenant-create --name tempest1&lt;/code&gt;&lt;br&gt;&lt;code&gt;keystone user-create --name tempest1 --tenant-id $demoTenantID1 --pass passw0rd --enabled True&lt;/code&gt;&lt;br&gt;&lt;code&gt;keystone tenant-create --name tempest2&lt;/code&gt;&lt;br&gt;&lt;code&gt;keystone user-create --name tempest2 --tenant-id $demoTenantID2 --pass passw0rd --enabled True&lt;/code&gt;    &lt;/p&gt;
+&lt;h3 id=&quot;run-tests-for-neutron-ports&quot;&gt;&lt;a href=&quot;#run-tests-for-neutron-ports&quot; class=&quot;headerlink&quot; title=&quot;run tests for neutron ports&quot;&gt;&lt;/a&gt;run tests for neutron ports&lt;/h3&gt;&lt;p&gt;&lt;code&gt;cd tempest/api/network&lt;/code&gt;&lt;br&gt;&lt;code&gt;nosetests -v test_ports.py&lt;/code&gt;     &lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Tempest for OpenStack Integration Tests&lt;/p&gt;
+&lt;p&gt;###Install and configure tempest:&lt;br&gt;&lt;code&gt;git clone https://github.com/openstack/tempest&lt;
+    
+    </summary>
+    
+      <category term="openstack" scheme="http://yoursite.com/categories/openstack/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ovs常用命令</title>
+    <link href="http://yoursite.com/2016/03/31/ovs%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    <id>http://yoursite.com/2016/03/31/ovs常用命令/</id>
+    <published>2016-03-31T08:10:02.446Z</published>
+    <updated>2016-03-31T08:10:02.410Z</updated>
+    
+    <content type="html">&lt;p&gt;#ovs常用命令&lt;/p&gt;
+&lt;p&gt;##1、显示隐藏流表:&lt;code&gt;ovs-appctl dump-flows/br-int&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;##2、&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;#ovs常用命令&lt;/p&gt;
+&lt;p&gt;##1、显示隐藏流表:&lt;code&gt;ovs-appctl dump-flows/br-int&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;##2、&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Learning</title>
+    <link href="http://yoursite.com/2016/03/31/learning/"/>
+    <id>http://yoursite.com/2016/03/31/learning/</id>
+    <published>2016-03-31T08:08:57.770Z</published>
+    <updated>2016-03-31T08:08:57.738Z</updated>
+    
+    <content type="html">&lt;p&gt;1.Markdown语法说明：&lt;br&gt;  &lt;a href=&quot;http://wowubuntu.com/markdown/#link&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://wowubuntu.com/markdown/#link&lt;/a&gt;&lt;br&gt;  &lt;a href=&quot;http://qingbo.net/picky/502-markdown-syntax.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://qingbo.net/picky/502-markdown-syntax.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2.GitHub简易指南：&lt;a href=&quot;http://rogerdudler.github.io/git-guide/index.zh.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://rogerdudler.github.io/git-guide/index.zh.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;3.Python decorator 入门：&lt;a href=&quot;http://blog.csdn.net/beckel/article/details/3585352&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.csdn.net/beckel/article/details/3585352&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;4.DevStack in 1 minute: &lt;a href=&quot;http://www.sebastien-han.fr/blog/2013/08/08/devstack-in-1-minute/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.sebastien-han.fr/blog/2013/08/08/devstack-in-1-minute/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;5.iptables详解：&lt;a href=&quot;http://www.liusuping.com/ubuntu-linux/iptables-firewall-setting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.liusuping.com/ubuntu-linux/iptables-firewall-setting.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;  Linux Packet Filtering and iptables:&lt;a href=&quot;http://www.linuxtopia.org/Linux_Firewall_iptables/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.linuxtopia.org/Linux_Firewall_iptables/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;6.网络虚拟化技术（LXC）：&lt;a href=&quot;http://blog.kghost.info/2013/03/01/linux-network-emulator/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.kghost.info/2013/03/01/linux-network-emulator/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;7.Ubuntu12.04.2 OpenStack Grizzly 安装:&lt;a href=&quot;http://www.chenshake.com/ubuntu12-04-2-installed-openstack-grizzly-bridge-mode/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.chenshake.com/ubuntu12-04-2-installed-openstack-grizzly-bridge-mode/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;8.如何在openstack环境中实现定制化功能:&lt;a href=&quot;http://blog.csdn.net/lynn_kong/article/details/8253150&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.csdn.net/lynn_kong/article/details/8253150&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;9.No module named XXX问题解决:&lt;a href=&quot;http://blog.csdn.net/lynn_kong/article/details/9044193&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.csdn.net/lynn_kong/article/details/9044193&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;1.Markdown语法说明：&lt;br&gt;  &lt;a href=&quot;http://wowubuntu.com/markdown/#link&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://wowubuntu.com/markdown/#link&lt;/a&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>IPv6 tools</title>
+    <link href="http://yoursite.com/2016/03/31/ipv6_tool/"/>
+    <id>http://yoursite.com/2016/03/31/ipv6_tool/</id>
+    <published>2016-03-31T08:08:14.294Z</published>
+    <updated>2016-03-31T08:08:14.250Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;em&gt;设置ipv6地址：&lt;/em&gt;&lt;br&gt;&lt;strong&gt;&lt;code&gt;ip -6 addr add 10::1/64 dev eth0&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;删除ipv6地址：&lt;/em&gt;&lt;br&gt;&lt;strong&gt;&lt;code&gt;ip -6 addr del 10::1/64 dev eth0&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;ping6链路本地地址：&lt;/em&gt;&lt;br&gt;&lt;strong&gt;&lt;code&gt;ping6 -I eth0 fe80::62eb:69ff:fe0c:bdcf&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;tracepath6&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;traceroute6&lt;/em&gt;  &lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;em&gt;设置ipv6地址：&lt;/em&gt;&lt;br&gt;&lt;strong&gt;&lt;code&gt;ip -6 addr add 10::1/64 dev eth0&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;删除ipv6地址：&lt;/em&gt;&lt;br&gt;&lt;strong&gt;&lt;code&gt;ip -6 add
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2016/03/31/hello-world/"/>
+    <id>http://yoursite.com/2016/03/31/hello-world/</id>
+    <published>2016-03-31T07:46:31.606Z</published>
+    <updated>2016-03-31T07:46:31.606Z</updated>
+    
+    <content type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Run-server&quot;&gt;&lt;a href=&quot;#Run-server&quot; class=&quot;headerlink&quot; title=&quot;Run server&quot;&gt;&lt;/a&gt;Run server&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo server&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/server.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Server&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Generate-static-files&quot;&gt;&lt;a href=&quot;#Generate-static-files&quot; class=&quot;headerlink&quot; title=&quot;Generate static files&quot;&gt;&lt;/a&gt;Generate static files&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo generate&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/generating.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Generating&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Deploy-to-remote-sites&quot;&gt;&lt;a href=&quot;#Deploy-to-remote-sites&quot; class=&quot;headerlink&quot; title=&quot;Deploy to remote sites&quot;&gt;&lt;/a&gt;Deploy to remote sites&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo deploy&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/deployment.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Deployment&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
